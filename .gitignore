@@ -1,0 +1,12 @@
+# build outputs
+build/
+*.o
+*.out
+a.out
+
+# macOS
+.DS_Store
+
+# editor
+.vscode/
+.idea/
