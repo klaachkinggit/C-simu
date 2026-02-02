@@ -14,28 +14,12 @@
 // public version V1
 //
 
-enum Status_cor
-{
-    DEAD,
-    ALIVE
-};
-enum Dir_rot_cor
-{
-    TRIGO,
-    INVTRIGO
-};
-enum Status_sca
-{
-    FREE,
-    EATING
-};
-enum Status_dev
-{
-    EXTEND,
-    REPRO
-};
+enum Status_cor { DEAD, ALIVE };
+enum Dir_rot_cor { TRIGO, INVTRIGO };
+enum Status_sca { FREE, EATING };
+enum Status_dev { EXTEND, REPRO };
 constexpr double dmax(256.);
-constexpr unsigned r_alg(1);
+constexpr unsigned r_alg(5);
 constexpr unsigned d_cor(3);
 constexpr unsigned r_sca(3);
 constexpr unsigned r_sca_repro(10);
