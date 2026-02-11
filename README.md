@@ -1,55 +1,61 @@
-# Microrécif - Simulation d'Écosystème Marin
+# Microrécif - Marine Ecosystem Simulation
 
 ## Description
-Ce projet est une simulation d'un micro-récif implémentée en C++ avec une interface graphique utilisant GTKmm. Le programme simule les interactions entre trois types de formes de vie :
-- **Algues** : Producteurs primaires qui apparaissent aléatoirement.
-- **Coraux** : Organismes immobiles qui grandissent et se reproduisent.
-- **Charognards** : Organismes mobiles qui se nourrissent de coraux morts.
+This project is a simulation of a micro-reef ecosystem implemented in C++ with a graphical interface using GTKmm. The program simulaties interactions between three types of life forms:
+- **Algae**: Primary producers that appear randomly.
+- **Corals**: Immobile organisms that grow and reproduce.
+- **Scavengers**: Mobile organisms that feed on dead corals.
 
-La simulation permet de visualiser ces interactions en temps réel, de contrôler l'exécution (start/stop/step) et de gérer des fichiers de configuration.
+The simulation allows real-time visualization of these interactions, execution control (start/stop/step), and configuration file management.
 
-## Auteurs
+## Authors
 - Tahri Malik
 - Laachfoubi Kamil
 
-## Prérequis
-- Compilateur compatible C++17 (ex: g++)
-- Bibliothèque GUI : `gtkmm-4.0`
+## Prerequisites
+- C++17 compatible compiler (e.g., g++)
+- GUI Library: `gtkmm-4.0`
 
 ## Compilation
-Utilisez le `Makefile` inclus pour compiler le projet :
+Use the included `Makefile` to compile the project:
 
 ```bash
 make
 ```
 
-Pour nettoyer les fichiers objets et l'exécutable :
+To clean object files and the executable:
 
 ```bash
 make clean
 ```
 
-## Utilisation
+## Usage
 
-Lancer la simulation en fournissant un fichier de configuration :
+Launch the simulation by providing a configuration file:
 
 ```bash
-./projet samples/sim_full.txt
+./projet samples/sim_normal.txt
 ```
 
-### Contrôles de l'Interface
-- **Start/Stop** : Lance ou met en pause la simulation.
-- **Step** : Avance la simulation d'un seul pas de temps.
-- **Open** : Charger un nouveau fichier de configuration.
-- **Save** : Sauvegarder l'état actuel de la simulation.
-- **Exit** : Quitter l'application.
-- **Naissance d'algue** : Case à cocher pour activer/désactiver l'apparition aléatoire de nouvelles algues.
+### Interface Controls
+- **Start/Stop**: Start or pause the simulation.
+- **Step**: Advance the simulation by a single time step.
+- **Open**: Load a new configuration file.
+- **Save**: Save the current state of the simulation.
+- **Exit**: Quit the application.
+- **Algae Birth**: Checkbox to enable/disable the random appearance of new algae.
 
-## Structure du Projet
-- `src/` : Fichiers sources (.cc)
-- `include/` : Fichiers en-tête (.h)
-- `samples/` : Fichiers d'exemple de simulation
-- `build/` : Fichiers objets générés lors de la compilation
+## Project Structure
+- `src/`: Source files (.cc)
+- `include/`: Header files (.h)
+- `samples/`: Simulation example files
+- `build/`: Object files generated during compilation
 
-## Format des Fichiers de Simulation
-Les fichiers de simulation sont des fichiers texte décrivant l'état initial du système (taille, nombre d'entités, propriétés de chaque entité). Voir les fichiers dans le dossier `samples/` pour des exemples.
+## Simulation Files
+The simulation files describe the initial state of the system. The following samples are available:
+
+1. `samples/sim_1_algae.txt`: Simulation with a single algae.
+2. `samples/sim_1_scavenger.txt`: Simulation with a single scavenger.
+3. `samples/sim_1_coral.txt`: Simulation with a single coral.
+4. `samples/sim_normal.txt`: A balanced simulation scenario.
+5. `samples/sim_crazy.txt`: A stress test with many entities (collision-free).
