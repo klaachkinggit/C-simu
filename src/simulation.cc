@@ -52,6 +52,7 @@ void Simulation::lecture(string &nom_fichier) {
   string line;
   ifstream fichier(nom_fichier);
   if (!fichier.fail()) {
+    fichier.imbue(std::locale::classic()); // Force "C" locale
     // l’appel de getline filtre aussi les séparateurs
     while (getline(fichier >> ws, line)) {
       // ligne de commentaire à ignorer, on passe à la suivante
@@ -68,6 +69,7 @@ void Simulation::lecture(string &nom_fichier) {
 
 void Simulation::decodage_ligne(string line) {
   istringstream data(line);
+  data.imbue(std::locale::classic()); // Force "C" locale
 
   switch (etat) {
   case NB0:
