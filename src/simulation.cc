@@ -110,7 +110,13 @@ void Simulation::decodage_ligne(string line) {
       Corail corail(data, coraux, test_lecture);
       coraux.push_back(corail);
       nb_seg = corail.getnb_segs();
-      etat = Etat_segment;
+      if (nb_seg == 0) {
+        if (i == total)
+          etat = NB2;
+        // else stay in Etat_corail for the next coral
+      } else {
+        etat = Etat_segment;
+      }
       k = 0;
       if (test_lecture == false)
         etat = FIN;
